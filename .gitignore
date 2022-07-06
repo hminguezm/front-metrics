@@ -1,0 +1,11 @@
+.idea/
+node_modules/
+
+coverage/
+build/
+
+*.env
+!.env.example
+
+yarn-error.log*
+yarn.lock
