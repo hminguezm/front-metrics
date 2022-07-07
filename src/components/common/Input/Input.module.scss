@@ -1,0 +1,140 @@
+.input-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--main-font-regular);
+  .input {
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 8px 16px;
+    gap: 10px;
+    height: 48px;
+    background: var(--neutral-0);
+    border: 1px solid var(--neutral-200);
+    border-radius: 8px;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:hover {
+      border: 1px solid var(--neutral-400);
+    }
+
+    &:focus {
+      border: 2px solid var(--primary-500);
+      &::placeholder {
+        color: var(--neutral-300);
+      }
+    }
+
+    &:disabled {
+      background: var(--neutral-100);
+      border: 1px solid var(--neutral-200);
+      border-radius: 8px;
+    }
+
+    &.success {
+      border: 1px solid var(--success-medium);
+
+      &:hover {
+        border: 2px solid var(--success-medium);
+      }
+
+      &:focus {
+        border: 2px solid var(--success-medium);
+      }
+    }
+    &.warning {
+      border: 1px solid var(--warning-dark);
+
+      &:hover {
+        border: 2px solid var(--warning-dark);
+      }
+
+      &:focus {
+        border: 2px solid var(--warning-dark);
+      }
+    }
+    &.error {
+      border: 1px solid var(--error-medium);
+
+      &:hover {
+        border: 2px solid var(--error-medium);
+      }
+
+      &:focus {
+        border: 2px solid var(--error-medium);
+      }
+    }
+  }
+
+  .label {
+    position: absolute;
+    letter-spacing: 0.25px;
+    pointer-events: none;
+    left: 15px;
+    top: 12px;
+    color: var(--neutral-400);
+    background: var(--neutral-0);
+    font: 400 16px;
+    line-height: 24px;
+    transition: all 0.2s ease-in;
+    &.input-value {
+      font-family: var(--main-font-bold);
+      top: -6px;
+      left: 11px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 16px;
+      border-radius: 5px;
+    }
+  }
+
+  .input:disabled + .label {
+    background: var(--neutral-100);
+    color: var(--neutral-200);
+  }
+
+  .input:focus + .label {
+    font-family: var(--main-font-bold);
+    top: -6px;
+    left: 11px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    border-radius: 5px;
+  }
+
+  .icon {
+    color: var(--iconos-active);
+    position: absolute;
+    left: auto;
+    right: 12px;
+    top: 0;
+    font-size: 25px;
+    height: 100%;
+    &.success {
+      color: var(--success-dark);
+    }
+    &.warning {
+      color: var(--warning-dark);
+    }
+    &.error {
+      color: var(--error-medium);
+    }
+  }
+}
+.feedback {
+  display: flex;
+  width: 100%;
+  min-height: 20px;
+  font: normal 13px/16px;
+  font-size: 13px;
+  line-height: 16px;
+  &.error {
+    color: var(--error-medium);
+  }
+}
