@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+  node:
+    env_file:
+    - .env
+    build:
+      context: ./
+      target: development
+    image: node:17.4.0-alpine3.14
+    working_dir: /app
+    command: yarn run start
+    restart: always
+    networks:
+      - frontend
+      - backend
+    volumes:
+      - ./:/app
+    ports:
+      - "4000:3000"
+networks:
+  frontend:
+    name: frontend
+    external: true
+  backend:
+    name: backend
+    external: true

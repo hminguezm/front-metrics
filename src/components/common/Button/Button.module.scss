@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
+  width: 50%;
 
   &.xs {
     font-size: 12px;
@@ -34,7 +35,7 @@
 
   &.primary {
     background-color: var(--primary-500);
-    border: none;
+    border: 1px solid;
     color: var(--neutral-0);
 
     &:disabled {

@@ -6,13 +6,11 @@
   font-family: var(--main-font-regular);
   .input {
     display: block;
-    width: 100%;
+    width: 95%;
     outline: none;
     padding: 8px 16px;
     gap: 10px;
     height: 48px;
-    background: var(--neutral-0);
-    border: 1px solid var(--neutral-200);
     border-radius: 8px;
 
     &::placeholder {
@@ -20,11 +18,11 @@
     }
 
     &:hover {
-      border: 1px solid var(--neutral-400);
+      border: 1px solid;
     }
 
     &:focus {
-      border: 2px solid var(--primary-500);
+      border: 2px solid;
       &::placeholder {
         color: var(--neutral-300);
       }

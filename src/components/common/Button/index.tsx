@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import classnames from 'classnames';
+import c from 'classnames';
 import Spinner from '../Spinner';
 
 // @ts-ignore
@@ -28,7 +28,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   return (
     <button
       type={type === 'submit' ? 'submit' : 'button'}
-      className={classnames(
+      className={c(
         styles.button,
         styles[variant],
         styles[size],

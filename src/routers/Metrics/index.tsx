@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import CreateMetric from '../../components/Metrics/CreateMetric';
-import ViewMetric from '../../components/Metrics/ViewMetric';
+import CreateMetric from '../../components/metrics/containers/CreateMetric';
+import ViewMetric from '../../components/metrics/containers/ViewMetric';
 
 const MetricRouter = () => {
   return (

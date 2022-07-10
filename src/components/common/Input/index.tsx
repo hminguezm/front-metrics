@@ -109,3 +109,5 @@ const Input: FunctionComponent<InputProps> = ({
     </div>
   );
 };
+
+export default Input;
