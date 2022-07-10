@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styles from './Metric.module.scss';
 import MetricForm from '../components/MetricForm';
 import { createMetric } from '../model';
+import ShowMetric from './ShowMetric';
 
 const CreateMetric = () => {
   const [stateMetricForm, setMetricForm] = useState({
@@ -18,15 +19,13 @@ const CreateMetric = () => {
 
   const handleForm = async () => {
     const apiResponse = await createMetric(stateMetricForm);
-    console.log(apiResponse)
     if (apiResponse.status !== 200) {
       setError(true);
-      alert("Unsuccessful create")
-      return
+      alert('Unsuccessful create');
+      return;
     }
 
-    alert("Successful create")
-
+    alert('Successful create');
   };
 
   return (
@@ -39,7 +38,9 @@ const CreateMetric = () => {
             onLoad={handleForm}
           />
         </div>
-        <div className={styles.wchild}>component</div>
+        <div className={styles.wchild}>
+          <ShowMetric />
+        </div>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import {FC, useState} from 'react';
+import { FC, useState } from 'react';
 import c from 'classnames';
 
 // @ts-ignore

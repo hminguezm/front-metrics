@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const getFromApi = async (url = null, token = '', type = '') => {
+export const getFromApi = async (url = '', token = '', type = '') => {
   if (url == null || url === '') {
     throw new Error("url and onSuccess can't be null or empty");
   }

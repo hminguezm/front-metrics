@@ -2,7 +2,7 @@ version: '3.7'
 services:
   node:
     env_file:
-    - .env
+      - .env
     build:
       context: ./
       target: development
@@ -16,7 +16,7 @@ services:
     volumes:
       - ./:/app
     ports:
-      - "4000:3000"
+      - '4000:3000'
 networks:
   frontend:
     name: frontend
