@@ -1,45 +1,77 @@
 import { FunctionComponent } from 'react';
-import c from 'classnames';
-import Spinner from '../Spinner';
+import styled, { css } from 'styled-components';
 
-// @ts-ignore
-import styles from './Button.module.scss';
+import { variants, fontSize } from './ButtonConfig';
 
 interface ButtonProps {
-  type?: 'button' | 'submit';
-  variant?: 'primary' | 'secondary' | 'terciary';
+  label?: string;
+  variant?: 'submit' | 'cancel' | 'default';
   size?: 'xs' | 's' | 'm' | 'l';
-  label: string;
   onClick?: () => void;
-  isLoading?: boolean;
   disabled?: boolean;
+  isLoading?: boolean;
 }
 
+const ButtonComponent = styled.button<ButtonProps>`
+  align-items: center;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 8px;
+  color: black;
+  display: inline-block;
+  font-family: -apple-system, system-ui, system-ui, 'Segoe UI', Roboto,
+    'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell,
+    'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Lucida Grande', Helvetica, Arial, sans-serif;
+  justify-content: center;
+  margin: 12px 0 0;
+  padding: 6px 12px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    cursor: default;
+  }
+
+  ${(props) => (props.label ? '' : props.label)}
+
+  ${(props) =>
+    props.variant &&
+    css`
+    ... ${variants[`${props.variant}`]};
+    `}
+
+  ${(props) =>
+    props.size &&
+    css`
+    ... ${fontSize[`${props.size}`]};
+    `}
+`;
+
 const Button: FunctionComponent<ButtonProps> = ({
-  type = 'button',
-  variant = 'primary',
-  size = 'm',
-  label,
-  onClick,
-  isLoading = false,
   disabled = false,
+  isLoading = false,
+  label,
+  size = 's',
+  onClick,
+  variant = 'default',
   ...props
-}) => {
+}: ButtonProps) => {
   return (
-    <button
-      type={type === 'submit' ? 'submit' : 'button'}
-      className={c(
-        styles.button,
-        styles[variant],
-        styles[size],
-        isLoading && styles.loading,
-      )}
+    <ButtonComponent
+      variant={variant}
+      size={size}
       onClick={onClick}
-      disabled={disabled || isLoading}
+      disabled={disabled}
       {...props}
     >
-      {isLoading ? <Spinner /> : label}
-    </button>
+      {isLoading ? '' : label}
+    </ButtonComponent>
   );
 };
 

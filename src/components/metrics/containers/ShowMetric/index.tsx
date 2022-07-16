@@ -5,7 +5,7 @@ import styles from './ShowMetric.module.scss';
 import Timeline from '../../components/Timeline';
 import { getMetric } from '../../model';
 import Button from '../../../common/Button';
-import Title from "../../../common/Title";
+import Title from '../../../common/Title';
 
 const ShowMetric = () => {
   const [stateMetricData, setMetricData] = useState([]);
@@ -34,13 +34,7 @@ const ShowMetric = () => {
           ))}
         </div>
       )}
-      <Button
-        type="submit"
-        variant="primary"
-        label="Get data"
-        size="s"
-        onClick={handleForm}
-      />
+      <Button variant="submit" label="Get data" onClick={handleForm} />
     </>
   );
 };

@@ -17,17 +17,12 @@
   "rules": {
     "requireForBlockBody": "off",
     "space-before-function-paren": "off",
-    "react/prefer-stateless-function": "warn",
+    "react/prefer-stateless-function": "off",
     "import/prefer-default-export": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "no-param-reassign": ["error", { "props": false }],
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".ts", ".tsx"]
-      }
-    ],
+    "react/jsx-filename-extension": "off",
     "linebreak-style": "off",
     "global-require": "off",
     "semi": "off",

@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 module.exports = {
   stories: ['../src/**/*.stories.@(ts|tsx|js|jsx)'],
@@ -9,7 +9,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/preset-create-react-app',
     {
-      name: "@storybook/addon-docs",
+      name: '@storybook/addon-docs',
       options: {
         configureJSX: true,
       },
@@ -43,6 +43,6 @@ module.exports = {
         allowSyntheticDefaultImports: false,
         esModuleInterop: false,
       },
-    }
-  }
-}
+    },
+  },
+};

@@ -5,6 +5,7 @@ import styles from './Metric.module.scss';
 import MetricForm from '../components/MetricForm';
 import { createMetric } from '../model';
 import ShowMetric from './ShowMetric';
+import Card from '../../common/Card';
 
 const CreateMetric = () => {
   const [stateMetricForm, setMetricForm] = useState({
@@ -30,6 +31,7 @@ const CreateMetric = () => {
 
   return (
     <>
+      <Card label={'AAAA'} title={'AAAA'} picture={'AAAA'} />
       <div className={styles.wrapper}>
         <div className={styles.wchild}>
           <MetricForm

@@ -49,10 +49,9 @@ const MetricForm: FC<MetricFormProps> = ({
               />
             </div>
             <Button
-              type="submit"
-              variant="primary"
-              label="Create"
-              size="s"
+              variant="cancel"
+              label={'Create'}
+              size={'m'}
               onClick={onLoad}
             />
           </form>
