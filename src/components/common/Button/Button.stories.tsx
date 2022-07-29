@@ -1,17 +1,16 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Button from './index';
 
 export default {
   title: 'Button',
   component: Button,
-  argTypes: { onClick: { action: 'clicked' } },
-};
+  argTypes: {
+    label: {
+      defaultValue: 'Example',
+    },
+  },
+} as ComponentMeta<typeof Button>;
 
-export const Default = () => <Button label="Example" />;
-
-export const Submit = () => (
-  <Button variant="submit" label="Example" size={'m'} />
-);
-
-export const Cancel = () => (
-  <Button variant="cancel" label="Example" size={'m'} />
+export const Example: ComponentStory<typeof Button> = (args) => (
+  <Button {...args} />
 );

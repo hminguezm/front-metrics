@@ -1,11 +1,43 @@
-import { FunctionComponent } from 'react';
-import { CgSpinner } from 'react-icons/cg';
+import React from 'react';
+import styled from 'styled-components';
 
-// @ts-ignore
-import styles from './Spinner.module.scss';
+const StyledSpinner = styled.svg`
+  animation: rotate 2s linear infinite;
+  margin: 0 0 0 0;
+  width: 50px;
+  height: 50px;
 
-const Spinner: FunctionComponent = () => (
-  <CgSpinner size={25} className={styles.spinner} />
+  circle {
+    stroke: #5652bf;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+`;
+
+const Spinner = () => (
+  <StyledSpinner viewBox="0 0 50 50">
+    <circle cx="25" cy="25" r="20" fill="none" strokeWidth="4" />
+  </StyledSpinner>
 );
 
 export default Spinner;

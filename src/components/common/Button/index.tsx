@@ -5,7 +5,7 @@ import { variants, fontSize } from './ButtonConfig';
 
 interface ButtonProps {
   label?: string;
-  variant?: 'submit' | 'cancel' | 'default';
+  variant?: 'default' | 'submit' | 'cancel';
   size?: 'xs' | 's' | 'm' | 'l';
   onClick?: () => void;
   disabled?: boolean;
@@ -30,15 +30,13 @@ const ButtonComponent = styled.button<ButtonProps>`
   vertical-align: middle;
   white-space: nowrap;
 
-  &:disabled {
+  :disabled {
     cursor: not-allowed;
   }
 
-  &:hover {
+  :hover {
     cursor: default;
   }
-
-  ${(props) => (props.label ? '' : props.label)}
 
   ${(props) =>
     props.variant &&
@@ -70,7 +68,7 @@ const Button: FunctionComponent<ButtonProps> = ({
       disabled={disabled}
       {...props}
     >
-      {isLoading ? '' : label}
+      {isLoading ? 'loading...' : label}
     </ButtonComponent>
   );
 };

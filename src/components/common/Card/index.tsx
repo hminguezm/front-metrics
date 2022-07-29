@@ -11,7 +11,8 @@ const CardWrapper = styled.div`
   border-radius: 30px;
   width: 350px;
   transition: 200ms;
-  &:hover {
+
+  :hover {
     cursor: pointer;
     box-shadow: 2px 2px 10px #e2e3e9;
   }
@@ -41,6 +42,7 @@ const Card: FC<CardProps> = ({ label, title, picture }: CardProps) => {
       <CardLabel>{label}</CardLabel>
       <CardImage src={picture} alt="freelancer" />
       <span>{title}</span>
+      <h2>{title}</h2>
     </CardWrapper>
   );
 };

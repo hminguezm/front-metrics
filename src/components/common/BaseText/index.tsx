@@ -43,6 +43,7 @@ const BaseText: FC<Props> = ({
       className={classnames(styles.text, center && styles.center)}
     >
       {text}
+      {' $volor'}
     </div>
   );
 };

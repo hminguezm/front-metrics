@@ -27,31 +27,31 @@ const MetricForm: FC<MetricFormProps> = ({
           <Title title=" Create Metric" />
           <form className={styles['form-container']} onSubmit={handleSubmit}>
             <Input
-              id="name"
+              key={1}
               type="text"
-              state={'default'}
-              value={stateMetricForm.name}
-              handleChange={handleChange('name')}
               label={'Name'}
-              placeholder={''}
-              feedback={''}
+              maxLength={22}
+              handleOnChange={handleChange('name')}
             />
             <div>
               <Input
-                id="value"
+                key={2}
                 type="text"
-                state={'default'}
-                value={stateMetricForm.value}
-                handleChange={handleChange('value')}
                 label={'Value'}
-                placeholder={''}
-                feedback={''}
+                maxLength={22}
+                handleOnChange={handleChange('value')}
               />
             </div>
             <Button
               variant="cancel"
               label={'Create'}
               size={'m'}
+              onClick={onLoad}
+            />
+            <Button
+              variant="submit"
+              label={'Create'}
+              size={'l'}
               onClick={onLoad}
             />
           </form>

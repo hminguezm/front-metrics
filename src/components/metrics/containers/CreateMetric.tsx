@@ -32,6 +32,8 @@ const CreateMetric = () => {
   return (
     <>
       <Card label={'AAAA'} title={'AAAA'} picture={'AAAA'} />
+      <Card label={'BBBB'} title={'BBBB'} picture={'BBBB'} />
+      <Card label={'CCCC'} title={'CCCC'} picture={'CCCC'} />
       <div className={styles.wrapper}>
         <div className={styles.wchild}>
           <MetricForm

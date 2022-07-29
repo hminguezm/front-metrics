@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--main-font-regular);
+
   .input {
     display: block;
     width: 95%;
@@ -45,6 +46,7 @@
         border: 2px solid var(--success-medium);
       }
     }
+
     &.warning {
       border: 1px solid var(--warning-dark);
 
@@ -56,6 +58,7 @@
         border: 2px solid var(--warning-dark);
       }
     }
+
     &.error {
       border: 1px solid var(--error-medium);
 
@@ -80,6 +83,7 @@
     font: 400 16px;
     line-height: 24px;
     transition: all 0.2s ease-in;
+
     &.input-value {
       font-family: var(--main-font-bold);
       top: -6px;
@@ -125,6 +129,7 @@
     }
   }
 }
+
 .feedback {
   display: flex;
   width: 100%;
