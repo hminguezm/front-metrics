@@ -6,7 +6,7 @@ import Pages from './routers';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import Input from './components/common/Input';
-import ImageICon from '../src/assets/images/icons/alert-circle.svg'
+import ImageICon from '../src/assets/images/icons/alert-circle.svg';
 
 const App: FC = () => {
   return (

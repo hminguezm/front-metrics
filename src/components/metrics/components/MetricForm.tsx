@@ -5,6 +5,7 @@ import styles from './MetricForm.module.scss';
 import Title from '../../common/Title';
 import Input from '../../common/Input';
 import Button from '../../common/Button';
+import Counter from '../../common/Counter';
 
 interface MetricFormProps {
   handleMetricForm: any;
@@ -20,6 +21,7 @@ const MetricForm: FC<MetricFormProps> = ({
   const handleChange = (context: any) => (event: { target: { value: any } }) =>
     handleMetricForm(context, event.target.value);
   const handleSubmit = (e: { preventDefault: () => any }) => e.preventDefault();
+
   return (
     <>
       <div className={styles.container}>

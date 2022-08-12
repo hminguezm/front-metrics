@@ -12,7 +12,7 @@ interface ButtonProps {
   isLoading?: boolean;
 }
 
-const ButtonComponent = styled.button<ButtonProps>`
+const StyledButton = styled.button<ButtonProps>`
   align-items: center;
   background: transparent;
   border: 1px solid;
@@ -61,7 +61,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   ...props
 }: ButtonProps) => {
   return (
-    <ButtonComponent
+    <StyledButton
       variant={variant}
       size={size}
       onClick={onClick}
@@ -69,7 +69,7 @@ const Button: FunctionComponent<ButtonProps> = ({
       {...props}
     >
       {isLoading ? 'loading...' : label}
-    </ButtonComponent>
+    </StyledButton>
   );
 };
 

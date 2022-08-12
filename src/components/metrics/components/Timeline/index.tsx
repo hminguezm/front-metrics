@@ -2,6 +2,17 @@ import { FC } from 'react';
 
 // @ts-ignore
 import styles from './Timeline.module.scss';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  display: flex;
+  margin: 10px 0;
+  padding-right: 30px;
+  position: relative;
+  width: 55%;
+`;
+
+const TimelineItem = styled.div``;
 
 interface TimelinePros {
   data: any;

@@ -1,11 +1,39 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 // @ts-ignore
 import styles from './Metric.module.scss';
 import MetricForm from '../components/MetricForm';
 import { createMetric } from '../model';
 import ShowMetric from './ShowMetric';
-import Card from '../../common/Card';
+import Card from '../../common/InformationCard/InformationCard';
+import Counter from '../../common/Counter';
+import Wrapper from '../../common/Wrapper';
+
+const lunchPeru = [
+  {
+    name: 'Ceviche',
+    image: '',
+    price: '$6.500',
+    quantity: 0,
+    id: 1,
+  },
+  {
+    name: 'Lomo saltado',
+    image: '',
+    price: '$5.500',
+    quantity: 0,
+
+    id: 2,
+  },
+
+  {
+    name: 'Causa limeña',
+    image: '',
+    price: '$3.500',
+    quantity: 0,
+    id: 3,
+  },
+];
 
 const CreateMetric = () => {
   const [stateMetricForm, setMetricForm] = useState({
@@ -29,11 +57,28 @@ const CreateMetric = () => {
     alert('Successful create');
   };
 
+  const [dataMenu, setDataManu] = useState(lunchPeru);
+
+  const handleCounterChange = (index: number, value: number): void => {
+    dataMenu[index].quantity = value;
+    setDataManu(dataMenu);
+  };
+
   return (
     <>
-      <Card label={'AAAA'} title={'AAAA'} picture={'AAAA'} />
-      <Card label={'BBBB'} title={'BBBB'} picture={'BBBB'} />
-      <Card label={'CCCC'} title={'CCCC'} picture={'CCCC'} />
+      {dataMenu.map((menu, idx) => {
+        return (
+          <div key={idx}>
+            {menu.name}
+            {menu.price}
+            <Counter
+              handleOnValue={(value: any) => handleCounterChange(idx, value)}
+            />
+          </div>
+        );
+      })}
+      {'}'}
+
       <div className={styles.wrapper}>
         <div className={styles.wchild}>
           <MetricForm

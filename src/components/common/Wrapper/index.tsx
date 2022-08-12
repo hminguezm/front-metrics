@@ -1,24 +1,11 @@
-import { FC, ReactElement } from 'react';
+import styled from 'styled-components';
 
-// @ts-ignore
-import styles from './Wrapper.module.scss';
-
-interface Props {
-  children?: ReactElement[];
-}
-
-const Wrapper: FC<Props> = ({ children }) => {
-  return (
-    <div className={styles.wrapper}>
-      {children?.map((component: ReactElement, key: number) => {
-        return (
-          <div key={key} className={styles.wchild}>
-            {component}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  border: 10px solid black;
+  width: 100%;
+`;
 
 export default Wrapper;
