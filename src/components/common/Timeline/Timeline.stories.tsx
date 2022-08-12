@@ -10,9 +10,12 @@ export const Example = () => (
 
 export const Example1 = () => (
   <>
-    <Timeline title={'1'} children={<h1>1</h1>} />
+    <Timeline title={'1'} children={(<><h1>2</h1><span>adasdasda</span></>)} />
     <Timeline title={'2'} children={<h1>2</h1>} />
     <Timeline title={'2'} children={<h1>3</h1>} />
+    <Timeline title={'3'} children={<h1>4</h1>} />
+    <Timeline title={'3'} children={<h1>4</h1>} />
+    <Timeline title={'3'} children={<h1>4</h1>} />
     <Timeline title={'3'} children={<h1>4</h1>} />
   </>
 );

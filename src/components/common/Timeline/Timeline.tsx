@@ -2,6 +2,10 @@ import { FC } from 'react';
 
 import styled from 'styled-components';
 
+const Wrapper = styled.div`
+  display: flex;
+`
+
 const TimelineItemContent = styled.div`
   align-items: flex-end;
   background-color: rgba(255, 255, 255, 100);
@@ -45,43 +49,9 @@ const TimelineItemContentCircle = styled.circle`
   z-index: 100;
 `;
 
-const TimelineItemCard = styled.div`
-  display: flex;
-  margin: 10px 0;
-  padding-right: 30px;
-  position: relative;
-  width: 55%;
-
-  :nth-child(odd) ${TimelineItemContent} {
-    align-self: flex-end;
-    justify-content: flex-end;
-    padding-left: 30px;
-    padding-right: 0;
-
-    ::after {
-      right: auto;
-      left: -7.5px;
-      box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
-    }
-  }
-
-  :nth-child(odd) ${TimelineItemContent} ${TimelineItemContentCircle} {
-    right: auto;
-    left: -40px;
-  }
-
-
-  @media only screen and (max-width: 1023px) {
-    ${TimelineItemContent} {
-      max-width: 100%;
-    }
-  }
-`;
-
 const TimelineItemContentTitle = styled.span`
-  ${TimelineItemContent} {
     color: rgba(0, 0, 0, 0.2);
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
     top: 5px;
     left: 5px;
@@ -89,6 +59,47 @@ const TimelineItemContentTitle = styled.span`
     padding: 5px;
     position: absolute;
     text-transform: uppercase;
+`;
+
+const TimelineItemCard = styled.div`
+  display: flex;
+  margin: 10px 0;
+  padding-right: 30px;
+  position: relative;
+  width: 55%;
+
+
+  :nth-child(odd){
+    left: 54%;
+  }
+
+  :nth-child(odd) ${TimelineItemContent} {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  :nth-child(odd) ${TimelineItemContent} {
+    ::after {
+      right: auto;
+      left: -7.5px;
+      box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  :nth-child(odd) ${TimelineItemContent} ${TimelineItemContentTitle} {
+    left: auto;
+    right: 5px;
+  }
+
+  :nth-child(odd) ${TimelineItemContent} ${TimelineItemContentCircle} {
+    right: auto;
+    left: -40px;
+  }
+
+  @media only screen and (max-width: 1023px) {
+    ${TimelineItemContent} {
+      max-width: 100%;
+    }
   }
 `;
 
@@ -99,13 +110,15 @@ interface Pros {
 
 const Timeline: FC<Pros> = ({ title, children }: Pros) => {
   return (
-    <TimelineItemCard>
-      <TimelineItemContent>
-        <TimelineItemContentTitle>{title}</TimelineItemContentTitle>
-        {children}
-        <TimelineItemContentCircle />
-      </TimelineItemContent>
-    </TimelineItemCard>
+
+      <TimelineItemCard>
+        <TimelineItemContent>
+          <TimelineItemContentTitle>{title}</TimelineItemContentTitle>
+          {children}
+          <TimelineItemContentCircle />
+        </TimelineItemContent>
+      </TimelineItemCard>
+
   );
 };
 
