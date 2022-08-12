@@ -2,10 +2,6 @@ import { FC } from 'react';
 
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  display: flex;
-`
-
 const TimelineItemContent = styled.div`
   align-items: flex-end;
   background-color: rgba(255, 255, 255, 100);
