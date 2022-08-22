@@ -7,6 +7,7 @@ import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import Input from './components/common/Input';
 import ImageICon from '../src/assets/images/icons/alert-circle.svg';
+import Average from './components/metrics/containers/Average';
 
 const App: FC = () => {
   return (
@@ -37,6 +38,9 @@ const App: FC = () => {
       <h2> BODY </h2>
       <h2> BODY </h2>
       <h2> BODY </h2>
+
+      <Average />
+
       <Footer>
         <h2> by Hector Minguez </h2>
       </Footer>

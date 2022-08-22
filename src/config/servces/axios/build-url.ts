@@ -10,9 +10,6 @@ export default {
   },
   path: {
     metrics: `metrics`,
-    metrics: `metrics`,
-    metrics: `metrics`,
-    metrics: (id) => `${id}`,
   },
   buildUrl: (
     url = '',

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 // @ts-ignore
-import styles from './ShowMetric.module.scss';
 import Timeline from '../../components/Timeline';
 import { getMetric } from '../../model';
 import Button from '../../../common/Button';
@@ -28,7 +27,7 @@ const ShowMetric = () => {
     <>
       <Title title=" Show Timeline Metric" />
       {stateMetricData.length > 0 && (
-        <div className={styles['timeline-container']}>
+        <div className={""}>
           {stateMetricData.map((data, index) => (
             <Timeline key={index} data={data} />
           ))}

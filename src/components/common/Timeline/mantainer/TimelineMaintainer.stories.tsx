@@ -5,5 +5,5 @@ export default {
 };
 
 export const Example = () => (
-  <TimelineMaintainer />
+  <TimelineMaintainer  children={(<></>)}/>
 );
