@@ -6,6 +6,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   align-items: center;
+  margin: 10px;
   justify-content: center;
   font-family: -apple-system, system-ui, system-ui, 'Segoe UI', Roboto,
     'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell,
@@ -48,10 +49,10 @@ const StyledInput = styled.input`
   border-radius: 8px;
   caret-shape: block;
   font-size: 14px;
-  gap: 5px;
-  height: 36px;
+  gap: 10px;
+  height: 48px;
   outline: none;
-  padding: 8px 16px;
+  padding: 2px 5px;
   width: 100%;
 
   :hover {

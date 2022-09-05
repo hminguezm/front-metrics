@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
-import CreateMetric from '../../components/metrics/containers/CreateMetric';
-import ViewMetric from '../../components/metrics/containers/ViewMetric';
+
+import Metrics from '../../views/Metrics/Metrics';
 
 const MetricRouter = () => {
   return (
     <Routes>
-      <Route index element={<CreateMetric />} />
-      <Route path="create" element={<CreateMetric />} />
-      <Route path="views" element={<ViewMetric />} />
+      <Route index element={<Metrics />} />
+      <Route path="create" element={<Metrics />} />
+      {/*<Route path="views" element={<ViewMetric />} />*/}
     </Routes>
   );
 };

@@ -46,15 +46,15 @@ const TimelineItemContentCircle = styled.circle`
 `;
 
 const TimelineItemContentTitle = styled.span`
-    color: rgba(0, 0, 0, 0.2);
-    font-size: 18px;
-    font-weight: bold;
-    top: 5px;
-    left: 5px;
-    letter-spacing: 1px;
-    padding: 5px;
-    position: absolute;
-    text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  font-weight: bold;
+  top: 5px;
+  left: 5px;
+  letter-spacing: 1px;
+  padding: 5px;
+  position: absolute;
+  text-transform: uppercase;
 `;
 
 const TimelineItemCard = styled.div`
@@ -64,8 +64,7 @@ const TimelineItemCard = styled.div`
   position: relative;
   width: 55%;
 
-
-  :nth-child(odd){
+  :nth-child(odd) {
     left: 54%;
   }
 
@@ -106,15 +105,13 @@ interface Pros {
 
 const Timeline: FC<Pros> = ({ title, children }: Pros) => {
   return (
-
-      <TimelineItemCard>
-        <TimelineItemContent>
-          <TimelineItemContentTitle>{title}</TimelineItemContentTitle>
-          {children}
-          <TimelineItemContentCircle />
-        </TimelineItemContent>
-      </TimelineItemCard>
-
+    <TimelineItemCard>
+      <TimelineItemContent>
+        <TimelineItemContentTitle>{title}</TimelineItemContentTitle>
+        {children}
+        <TimelineItemContentCircle />
+      </TimelineItemContent>
+    </TimelineItemCard>
   );
 };
 

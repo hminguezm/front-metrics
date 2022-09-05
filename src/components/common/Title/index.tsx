@@ -6,7 +6,7 @@ import styles from './Title.module.scss';
 
 interface Props {
   size?: number;
-  title?: string;
+  label?: string;
   testId?: string;
   center?: boolean;
   marginTop?: number;
@@ -17,7 +17,7 @@ interface Props {
 
 const Title: FC<Props> = ({
   size,
-  title,
+  label,
   testId,
   center,
   marginTop,
@@ -27,7 +27,7 @@ const Title: FC<Props> = ({
 }) => {
   return (
     <div
-      data-testid={`title-${testId}`}
+      data-testid={`label-${testId}`}
       style={{
         fontSize: size,
         marginTop,
@@ -35,9 +35,9 @@ const Title: FC<Props> = ({
         marginRight,
         marginBottom,
       }}
-      className={classnames(styles.title, center && styles.center)}
+      className={classnames(styles.label, center && styles.center)}
     >
-      {title}
+      {label}
     </div>
   );
 };

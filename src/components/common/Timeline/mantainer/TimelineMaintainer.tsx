@@ -1,5 +1,5 @@
-import { FC } from "react";
-import styled from "styled-components";
+import { FC } from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,18 +15,14 @@ const Wrapper = styled.div`
     width: 4px;
     height: 100%;
   }
-`
+`;
 
 interface Props {
-  children: any
+  children: any;
 }
 
-const TimelineMaintainer: FC<Props> = ({children}: Props) => {
-  return (
-    <Wrapper>
-      {children}
-    </Wrapper>
-  );
+const TimelineMaintainer: FC<Props> = ({ children }: Props) => {
+  return <Wrapper>{children}</Wrapper>;
 };
 
-export default TimelineMaintainer
+export default TimelineMaintainer;

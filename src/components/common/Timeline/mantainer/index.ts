@@ -1,3 +1,3 @@
-import TimelineMaintainer from "./TimelineMaintainer";
+import TimelineMaintainer from './TimelineMaintainer';
 
-export default TimelineMaintainer
+export default TimelineMaintainer;
