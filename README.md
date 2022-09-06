@@ -1,21 +1,61 @@
-# Front
+# Front Metrics with averages
 
-## local run
+# Requirement
+-  [dotenv-cli](https://www.npmjs.com/package/dotenv-cli) (by local stage)
+-  [Docker](https://www.docker.com/) ~>18 (Optional)
+-  [Docker compose](https://docs.docker.com/compose/) ~>1.28.0 (Optional)
 
-install dependencies
+# Running in local stages
 
-```bash
-  yarn install
+create a .env file configuration in de root file directory for local deploy
+
+variables required
+
+```dotenv
+REACT_APP_API_METRICS_URL=
+
+and run
+
+```shell
+yarn && yarn start:<>
 ```
 
-run project
+# Running in local stages with dotenv
 
-```bash
- yarn start
+```dotenv
+  dotenv -e .env yarn run start<>
 ```
 
-run test
+# Running with Docker
 
-```bash
-  yarn test
+### environments variables
+
+The application includes several docker-compose configuration file where you can change the env vars
+
+env_file:
+- .env
+
+Note: This basePath value must be igual to ```BASE_PATH```, into .env file
+
+## Run with environment file
+
+```shell
+docker-compose -f docker-compose.yml up -d --build
 ```
+
+## Running a new container every time and then log output (default environment):
+
+```shell
+docker-compose up -d --build --force-recreate; docker-compose logs -f
+```
+
+## Running a new container every time and then log output (with environment):
+
+```shell
+docker-compose -f docker-compose.yml up -d --build --force-recreate; docker-compose -f docker-compose.yml logs -f
+```
+
+## Reference Links
+
++ [docker-compose Documentation](https://docs.docker.com/compose/)
+
